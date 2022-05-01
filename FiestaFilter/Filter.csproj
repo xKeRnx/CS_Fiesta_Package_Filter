@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1FABB498-7D4C-486C-A4B9-53E4A6C09803}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Filter</RootNamespace>
+    <AssemblyName>Filter</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Compiled\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Compiled\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Filter.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>..\Compiled\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IniFile.cs" />
+    <Compile Include="Instances\Handlers\Combine.cs" />
+    <Compile Include="Instances\Handlers\FilterAssembly.cs" />
+    <Compile Include="Instances\Handlers\HandlerLoader.cs" />
+    <Compile Include="Instances\Handlers\PacketHandlerAttribute.cs" />
+    <Compile Include="Instances\Networking\Client.cs" />
+    <Compile Include="Instances\Networking\FiestaCrypto.cs" />
+    <Compile Include="Instances\Networking\Listener.cs" />
+    <Compile Include="Instances\Networking\Packet.cs" />
+    <Compile Include="Login\Handlers\Login2Handle.cs" />
+    <Compile Include="Login\Handlers\Login3Handle.cs" />
+    <Compile Include="Login\Handlers\LoginPacketLoader.cs" />
+    <Compile Include="Login\Handlers\LoginTypes.cs" />
+    <Compile Include="Login\Networking\LoginClient.cs" />
+    <Compile Include="Login\Networking\LoginListener.cs" />
+    <Compile Include="Login\Networking\LoginServer.cs" />
+    <Compile Include="Manager\Handlers\Manager21Handle.cs" />
+    <Compile Include="Manager\Handlers\Manager22Handle.cs" />
+    <Compile Include="Manager\Handlers\Manager25Handle.cs" />
+    <Compile Include="Manager\Handlers\Manager29Handle.cs" />
+    <Compile Include="Manager\Handlers\Manager2Handle.cs" />
+    <Compile Include="Manager\Handlers\Manager38Handle.cs" />
+    <Compile Include="Manager\Handlers\Manager3Handle.cs" />
+    <Compile Include="Manager\Handlers\Manager4Handle.cs" />
+    <Compile Include="Manager\Handlers\Manager8Handle.cs" />
+    <Compile Include="Manager\Handlers\ManagerTypes.cs" />
+    <Compile Include="Manager\Handlers\ManagerPacketLoader.cs" />
+    <Compile Include="Manager\Networking\ManagerClient.cs" />
+    <Compile Include="Manager\Networking\ManagerListener.cs" />
+    <Compile Include="Manager\Networking\ManagerServer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Remote\RemoteClient.cs" />
+    <Compile Include="Remote\RemoteListener.cs" />
+    <Compile Include="Utilities\Message.cs" />
+    <Compile Include="Utilities\Writer.cs" />
+    <Compile Include="Zone\Game\Question.cs" />
+    <Compile Include="Zone\Handlers\Zone12Handle.cs" />
+    <Compile Include="Zone\Handlers\Zone15Handle.cs" />
+    <Compile Include="Zone\Handlers\Zone19Handle.cs" />
+    <Compile Include="Zone\Handlers\Zone26Handle.cs" />
+    <Compile Include="Zone\Handlers\Zone2Handle.cs" />
+    <Compile Include="Zone\Handlers\Zone4Handle.cs" />
+    <Compile Include="Zone\Handlers\Zone6Handle.cs" />
+    <Compile Include="Zone\Handlers\Zone8Handle.cs" />
+    <Compile Include="Zone\Handlers\ZonePacketLoader.cs" />
+    <Compile Include="Zone\Handlers\ZoneTypes.cs" />
+    <Compile Include="Zone\Networking\ZoneClient.cs" />
+    <Compile Include="Zone\Networking\ZoneListener.cs" />
+    <Compile Include="Zone\Networking\ZoneServer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Properties\app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FilterLib\FilterLib.csproj">
+      <Project>{0cea7d7f-adaa-4276-a68d-25c19d0f7595}</Project>
+      <Name>FilterLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShineTables\ShineTable.csproj">
+      <Project>{f39683e0-d80b-456b-acb1-436e7edbe84b}</Project>
+      <Name>ShineTable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SHN\SHN.csproj">
+      <Project>{fb4f3c7e-fa4b-4231-a6da-9252a5ca557b}</Project>
+      <Name>SHN</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
